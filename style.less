@@ -1,0 +1,106 @@
+@tiny: 5px;
+@small: 10px;
+@medium: 20px;
+@large: 40px;
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 12px;
+}
+
+#map {
+    position: absolute;
+    top: 0;
+    right: 350px;
+    bottom: 0;
+    left: 0;
+}
+
+#controls {
+    position: absolute;
+    background: white;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 350px;
+    padding: 30px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+    overflow: scroll;
+    height: 100%;
+
+    section {
+        margin-bottom: @small;
+
+        h5 {
+            font-weight: bold;
+            margin-bottom: @tiny;
+        }
+
+        textarea {
+            width: 100%;
+            font-family: monospace;
+            font-size: 10px;
+            min-height: 200px;
+        }
+
+        table {
+            tr {
+                &.i0 th { color: red; }
+                &.i1 th { color: orange; }
+                &.i2 th { color: yellow; }
+                &.i3 th { color: green; }
+                &.i4 th { color: blue; }
+                &.i5 th { color: purple; }
+
+                th,
+                td {
+                    padding: @tiny @small;
+                }
+            }
+        }
+    }
+}
+
+svg {
+    shape-rendering: geometricPrecision;
+
+    .polygons {
+        path {
+            fill: rgba(0, 0, 0, 0.1);
+            stroke: none;
+            pointer-events: none;
+        }
+    }
+
+    .borders {
+        path {
+            fill: none;
+            stroke-width: 5px;
+            opacity: 0.25;
+            cursor: pointer;
+
+            &:hover {
+                opacity: 0.5;
+            }
+
+            &.i0 { stroke: red; }
+            &.i1 { stroke: orange; }
+            &.i2 { stroke: yellow; }
+            &.i3 { stroke: green; }
+            &.i4 { stroke: blue; }
+            &.i5 { stroke: purple; }
+        }
+    }
+
+    .handles {
+        circle {
+            fill: rgba(0, 0, 0, 0.15);
+            cursor: pointer;
+            stroke-width: 1px;
+
+            &:hover {
+                stroke: rgba(0, 0, 0, 0.5);
+            }
+        }
+    }
+}
